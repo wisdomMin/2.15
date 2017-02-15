@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Document</title>
+</head>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		border: 1px solid red;
+	}
+</style>
+<script src="ajax.js"></script>
+<body>
+	<div></div>
+	<input type="button" value="按钮"/>
+</body>
+<script>
+	window.onload=function(){
+		var btn=document.getElementsByTagName("input")[0];
+		btn.onclick=function(){
+			ajax({
+				method:"get",
+				url:"2.php",
+				dataType:"text",
+				data:"aa=bb&&cc=dd",
+				success:function(result){
+					alert(result);
+				}
+			})
+		}
+	}
+</script>
+</html>
